@@ -4,7 +4,7 @@ import Header from '../components/Header'
 
 function IndexPage() {
   return (
-   <div>idex page here</div>
+   <div>index page here</div>
   )
 }
 

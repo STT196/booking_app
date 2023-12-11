@@ -16,7 +16,7 @@ function RegisterPage() {
       alert('registration success..!')
     }
     catch(err){
-        console.log(err)
+        alert('fail')
     }
   
     
