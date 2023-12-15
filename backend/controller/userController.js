@@ -61,4 +61,4 @@ const logout =(req,res)=>{
   res.cookie('token','').json(true);
 }
 
-export {registerUser,login,profileInfo}
+export {registerUser,login,profileInfo,logout}

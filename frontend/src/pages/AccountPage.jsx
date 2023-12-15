@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "../components/UserContext.jsx";
 import { Link, Navigate, useParams } from "react-router-dom";
 import axios from "axios";
+import MyPlaces from "./MyPlaces.jsx";
 
 function AccountPage() {
-  const { user } = useContext(UserContext);
+  const [redirect,setRedirect]=useState(false);
+  const { ready,user,setUser} = useContext(UserContext);
   let { subpage } = useParams();
   if (subpage === undefined) {
     subpage = "profile";
@@ -12,7 +14,11 @@ function AccountPage() {
 
 async function loggout(){
   await axios.post('/logout');
+  setRedirect('/');
+  setUser(null)
+
 }
+
 
   function linkClasses(type = null) {
     let classes = "inline-flex gap-1 py-2 px-6 rounded-full";
@@ -22,6 +28,10 @@ async function loggout(){
       classes += " bg-gray-200";
     }
     return classes;
+  }
+
+  if(redirect){
+    return <Navigate to={redirect}/>
   }
   return (
     <div>
@@ -83,6 +93,11 @@ async function loggout(){
           Logged in as {user.name} ({user.email}) <br/>
           <button onClick={loggout} className="primary max-w-sm mt-2">Logout</button>
         </div>
+      )}
+
+      {subpage==='places'
+       &&(
+        <MyPlaces/>
       )}
     </div>
   );
