@@ -26,7 +26,7 @@ jobs:
         run: |
           docker build \
             --build-arg MONGO_STR="${{ secrets.MONGO_STR }}" \
-            --build-arg PORT="${{ secrets.PORT }}" \
+            --build-arg PORT="${{ vars.PORT }}" \
             -t "${{ secrets.DOCKER_USERNAME }}/backend" \
             backend
 
