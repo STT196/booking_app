@@ -27,8 +27,8 @@ jobs:
           POPRT: ${{vars.PORT}}
           MONGO_STR: ${{secrets.MONGO_STR}}
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/backend backend \
-          --build-arg MONGO_STR=${{secretes.MONGO_STR}} \
-          --build-arg PORT=${{vars.PORT}}
+            --build-arg MONGO_STR=${{secretes.MONGO_STR}} \
+            --build-arg PORT=${{vars.PORT}}
           
   #     - name: Save Docker Images as Tar Archives
   #       run: |
