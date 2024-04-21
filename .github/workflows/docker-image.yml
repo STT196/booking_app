@@ -27,7 +27,7 @@ jobs:
           docker build \
             -t ${{ secrets.DOCKER_USERNAME }}/backend \
             --build-arg MONGO_STR=${{ secrets.MONGO_STR }} \
-            --build-arg PORT=${{ secrets.PORT }} --no-cache \
+            PORT=${{ secrets.PORT }} --no-cache \
             backend
 
 
