@@ -1,6 +1,6 @@
 FROM node:20-alpine3.18
 
-RUN apk add --no-cache bash
+# RUN apk add --no-cache bash
 
 RUN addgroup app && adduser -S -G app app
 
@@ -22,7 +22,7 @@ RUN chown -R app:app .
 # change the user back to the app user
 USER app
 
-RUN touch .env | echo PORT= ${{variables.PORT}} >> .env | echo MONGO_STR= ${{secrets.MONGO_STR}} >> .env
+RUN touch .env | echo PORT= ${{vars.PORT}} >> .env | echo MONGO_STR= ${{secrets.MONGO_STR}} >> .env
 RUN cat .env
 RUN npm install
 
