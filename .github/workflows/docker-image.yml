@@ -70,8 +70,8 @@ jobs:
             docker rm -f mearn-stack_backend || true
 
             # Load Docker images from saved tar archives
-            docker load -i /home/wap-admin/uditha/frontend.tar
-            docker load -i /home/wap-admin/uditha/backend.tar
+            docker load -i /home/wap-admin/docker/uditha/frontend.tar
+            docker load -i /home/wap-admin/docker/udithabackend.tar
 
 
             docker system prune -f
