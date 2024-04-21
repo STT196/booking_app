@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-env:
-  POPRT: ${{vars.PORT}}
-  MONGO_STR: ${{secrets.MONGO_STR}}
 
 jobs:
   build:
@@ -26,6 +23,9 @@ jobs:
         run: echo ${{vars.PORT}}
           
       - name: Build Backend Docker Image
+        env:
+          POPRT: ${{vars.PORT}}
+          MONGO_STR: ${{secrets.MONGO_STR}}
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/backend backend
           
   #     - name: Save Docker Images as Tar Archives
