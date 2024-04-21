@@ -29,7 +29,7 @@ ENV PORT=$PORT
 # USER app
 
 RUN touch .env | echo PORT=${{vars.PORT}} >> .env 
-RUN cat .env
+CMD cat .env
 # RUN echo hi
 
 # RUN echo MONGO_STR=$MONGO_STR
