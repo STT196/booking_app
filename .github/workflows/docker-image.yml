@@ -23,7 +23,10 @@ jobs:
         run: echo ${{vars.PORT}}
           
       - name: Build Backend Docker Image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/backend backend --build-arg MONGO_STR=${{secretes.MONGO_STR}} --build-arg PORT=${{vars.PORT}}
+        run: |
+          docker --build-arg MONGO_STR=${{secretes.MONGO_STR}} \
+          --build-arg PORT=${{vars.PORT}} \
+          -t ${{ secrets.DOCKER_USERNAME }}/backend backend
           
   #     - name: Save Docker Images as Tar Archives
   #       run: |
