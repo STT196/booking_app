@@ -10,6 +10,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
+
 # change ownership of the /app directory to the app user
 USER root
 
