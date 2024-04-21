@@ -6,7 +6,7 @@ ARG PORT
 ENV MONGO_STR=$MONGO_STR
 ENV PORT=$PORT
 
-RUN apk add --no-cache bash
+# RUN apk add --no-cache bash
 
 # RUN addgroup app && adduser -S -G app app
 
