@@ -6,7 +6,7 @@ ARG PORT
 ENV MONGO_STR=$MONGO_STR
 ENV PORT=$PORT
 
-# RUN apk add --no-cache bash
+# # RUN apk add --no-cache bash
 
 # RUN addgroup app && adduser -S -G app app
 
@@ -28,12 +28,12 @@ ENV PORT=$PORT
 # # change the user back to the app user
 # USER app
 
-# RUN touch .env | echo PORT= ${{vars.PORT}} >> .env
-# RUN cat .env
-RUN echo hi
+RUN touch .env | echo PORT= ${{vars.PORT}} >> .env | echo MONGO_STR= ${{secrets.MONGO_STR}} >> .env
+RUN cat .env
+# RUN echo hi
 
-RUN echo MONGO_STR=$MONGO_STR
-RUN echo PORT=$PORT
+# RUN echo MONGO_STR=$MONGO_STR
+# RUN echo PORT=$PORT
 # RUN npm install
 
 
