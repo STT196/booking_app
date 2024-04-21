@@ -24,7 +24,7 @@ FROM node:20-alpine3.18
 
 # RUN touch .env | echo PORT= ${{vars.PORT}} >> .env
 # RUN cat .env
-RUN echo ${{vars.PORT}}
+RUN echo "${{vars.PORT}}"
 # RUN npm install
 
 
