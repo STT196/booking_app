@@ -33,6 +33,7 @@ RUN apk add --no-cache bash
 RUN echo hi
 
 RUN echo MONGO_STR=$MONGO_STR
+RUN echo PORT=$PORT
 # RUN npm install
 
 
