@@ -1,5 +1,7 @@
 FROM node:20-alpine3.18
 
+ENV MONGO_STR=${MONGO_STR}
+
 # RUN apk add --no-cache bash
 
 # RUN addgroup app && adduser -S -G app app
@@ -25,7 +27,7 @@ FROM node:20-alpine3.18
 # RUN touch .env | echo PORT= ${{vars.PORT}} >> .env
 # RUN cat .env
 RUN echo hi
-RUN ["echo" , ${{vars.PORT}}]
+RUN echo $MONGO_STR
 # RUN npm install
 
 
