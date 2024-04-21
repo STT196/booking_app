@@ -1,6 +1,6 @@
 FROM node:20-alpine3.18
 
-ENV MONGO_STR=${MONGO_STR}
+ARG MONGO_STR=${MONGO_STR}
 
 # RUN apk add --no-cache bash
 
