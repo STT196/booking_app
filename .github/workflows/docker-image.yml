@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest    
     steps:
       - name: test
-        run: echo ${{secrets.MONGO_STR}}
+        run: echo $PORT
       # - name: Checkout Repository
       #   uses: actions/checkout@v2
           
