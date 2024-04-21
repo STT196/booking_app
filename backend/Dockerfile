@@ -22,7 +22,7 @@ RUN chown -R app:app .
 # change the user back to the app user
 USER app
 
-RUN touch .env | echo PORT={{$variables.PORT}} >> .env | echo MONGO_STR={{$secrets.MONGO_STR}} >> .env
+RUN touch .env | echo PORT={{ $variables.PORT }} >> .env | echo MONGO_STR={{ $secrets.MONGO_STR }} >> .env
 RUN cat .env
 RUN npm install
 
