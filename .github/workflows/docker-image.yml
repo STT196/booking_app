@@ -5,8 +5,8 @@ on:
     branches:
       - master
 env:
-  POPRT: "${{vars.PORT}}"
-  MONGO_STR: "${{secrets.MONGO_STR}}"
+  POPRT: ${{vars.PORT}}
+  MONGO_STR: ${{secrets.MONGO_STR}}
 
 jobs:
   build:
