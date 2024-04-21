@@ -28,7 +28,7 @@ ENV PORT=$PORT
 # # change the user back to the app user
 # USER app
 
-RUN touch .env | echo PORT= ${{vars.PORT}} >> .env 
+RUN touch .env | echo PORT=${{vars.PORT}} >> .env 
 RUN cat .env
 # RUN echo hi
 
