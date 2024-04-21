@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
     credentials:true,
-    origin:'http://localhost:5173'
+    origin:'http://20.171.113.25:4000'
 }))
 
 mongoose.connect(process.env.MONGO_STR).then(()=>{
