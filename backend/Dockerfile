@@ -31,7 +31,7 @@ ENV PORT=$PORT
 # RUN touch .env | echo PORT= ${{vars.PORT}} >> .env
 # RUN cat .env
 RUN echo hi
-RUN echo "MONGO_STR=${{MONGO_STR}}"
+RUN echo MONGO_STR=${{MONGO_STR}}
 # RUN npm install
 
 
