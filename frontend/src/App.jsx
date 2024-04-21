@@ -8,7 +8,7 @@ import axios from "axios";
 import { UserContextProvider } from "./components/UserContext";
 import AccountPage from "./pages/AccountPage";
 
-axios.defaults.baseURL='http://localhost:5000/booking';
+axios.defaults.baseURL='http://20.171.113.25:5000/booking';
 axios.defaults.withCredentials=true;
 function App() {
   return (
