@@ -8,38 +8,32 @@ ENV PORT=$PORT
 
 # # RUN apk add --no-cache bash
 
-# RUN addgroup app && adduser -S -G app app
+RUN addgroup app && adduser -S -G app app
 
-# USER app
+USER app
 
-# WORKDIR /app
+WORKDIR /app
 
-# COPY package*.json ./
+COPY package*.json ./
 
 
-# # change ownership of the /app directory to the app user
-# USER root
+# change ownership of the /app directory to the app user
+USER root
 
-# # change ownership of the /app directory to the app user
-# # chown -R <user>:<group> <directory>
-# # chown command changes the user and/or group ownership of for given file.
-# RUN chown -R app:app .
+# change ownership of the /app directory to the app user
+# chown -R <user>:<group> <directory>
+# chown command changes the user and/or group ownership of for given file.
+RUN chown -R app:app .
 
-# # change the user back to the app user
-# USER app
+# change the user back to the app user
+USER app
 
-RUN touch .env | echo PORT=${{vars.PORT}} >> .env 
-CMD cat .env
-# RUN echo hi
-
-# RUN echo MONGO_STR=$MONGO_STR
-# RUN echo PORT=$PORT
-# RUN npm install
+RUN npm install
 
 
 
-# COPY . .
+COPY . .
 
-# EXPOSE 5000
+EXPOSE 5000
 
-# CMD npm start
+CMD npm start
