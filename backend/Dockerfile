@@ -1,7 +1,10 @@
 FROM node:20-alpine3.18
 
 ARG MONGO_STR
+ARG PORT
+
 ENV MONGO_STR=$MONGO_STR
+ENV PORT=$PORT
 
 # RUN apk add --no-cache bash
 
@@ -28,7 +31,7 @@ ENV MONGO_STR=$MONGO_STR
 # RUN touch .env | echo PORT= ${{vars.PORT}} >> .env
 # RUN cat .env
 RUN echo hi
-RUN echo MONGO_STR=${{MONGO_STR}}
+RUN echo "MONGO_STR=${{MONGO_STR}}"
 # RUN npm install
 
 
