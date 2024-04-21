@@ -21,7 +21,7 @@ RUN chown -R app:app .
 # change the user back to the app user
 USER app
 
-RUN touch .env | echo VITE_API_URL: http://localhost:8000 >> .env
+RUN touch .env | echo PORT={{env.PORT}} >> .env |  echo MONGO_STR={{$env.MONGO_STR}} >> .env
 RUN npm install
 
 
